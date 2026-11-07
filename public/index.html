@@ -8,13 +8,13 @@
   <style>
     :root { --navy: #00132c; --red: #d90300; }
     * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; height: 100%; background: #ffffff; }
+    html, body { margin: 0; padding: 0; background: #ffffff; }
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      min-height: 100vh; padding: 2.5rem 0;
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     .logo {
@@ -22,6 +22,7 @@
       height: auto;
       display: block;
     }
+    .scene { width: min(86vw, 960px); height: auto; display: block; margin-top: 2.25rem; }
     .enter {
       margin-top: 2.5rem;
       display: inline-block;
@@ -46,6 +47,7 @@
 </head>
 <body>
   <img class="logo" src="logo.png" width="1774" height="887" alt="CoS LLC, Center on Strategy">
+  <img class="scene" src="black-hills.jpg" width="1672" height="941" alt="Pine forest and limestone cliffs of the Black Hills at dawn">
   <a class="enter" href="contents.html">Enter</a>
 </body>
 </html>
