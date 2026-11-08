@@ -569,3 +569,21 @@ ol.route li::before {
 .subhead-ground + .photo-deer { margin-top: 1.5rem; }
 .photo-deer { margin-bottom: 0; }
 .photo-deer + .photo-collage { margin-top: 3rem; }
+
+/* Our Report (V): ratings matrix */
+.matrix-wrap { overflow-x: auto; margin: 1.5rem 0 0 0; -webkit-overflow-scrolling: touch; }
+.matrix { border-collapse: collapse; width: 100%; min-width: 640px; font-family: var(--sans); font-size: 0.78rem; }
+.matrix th, .matrix td { padding: 0.55rem 0.4rem; text-align: center; border: 2px solid var(--bg-deep); }
+.matrix thead th { background: var(--ink); color: #fff; font-weight: 500; font-size: 0.68rem; letter-spacing: 0.04em; }
+.matrix tbody th { text-align: left; font-weight: 400; background: #fff; color: var(--ink-soft); padding-left: 0.7rem; min-width: 11rem; }
+.matrix td { font-weight: 600; color: #14171b; }
+.matrix td.avg { background: #fff; color: var(--ink); }
+.matrix td.na { background: #e6e3da; color: #8a8f96; font-weight: 400; }
+.matrix tr.total th, .matrix tr.total td { border-top: 2px solid var(--line); }
+.r5 { background: #c0392b; } .r4 { background: #e58e5b; } .r3 { background: #f2d16b; } .r2 { background: #b7d38a; } .r1 { background: #6fb57a; }
+.matrix td.r5, .matrix-legend .r5 { color: #fff; }
+.matrix-legend { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 2rem; font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.04em; }
+.matrix-legend span { padding: 0.3rem 0.7rem; color: #14171b; }
+.report-points { margin: 0 0 1.5rem 0; padding-left: 1.2rem; color: var(--ink-soft); }
+.report-points li { margin-bottom: 0.6rem; }
+.report-request { display: inline-block; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 0.3rem 0; }
