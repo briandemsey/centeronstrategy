@@ -566,3 +566,6 @@ ol.route li::before {
 .map-frame img { display: block; }
 .map-mark { width: 26px; height: 26px; margin: -13px 0 0 -13px; }
 .map-mark::after { width: 5px; height: 5px; margin: -2.5px 0 0 -2.5px; }
+.subhead-ground + .photo-deer { margin-top: 1.5rem; }
+.photo-deer { margin-bottom: 0; }
+.photo-deer + .photo-collage { margin-top: 3rem; }
