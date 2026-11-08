@@ -331,7 +331,8 @@
         Tell us a little about the decision in front of you. Messages come directly to Brian Demsey in Spearfish, South Dakota, and every one receives a reply.
       </p>
       <form class="inquire-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="subject" value="Center Of The Nation - inquiry">
+                <input type="hidden" name="access_key" value="094b4d7e-981d-46a7-bbdc-254071bdde27">
+        <input type="hidden" name="subject" value="Center Of The Nation - inquiry">
         <input type="hidden" name="from_name" value="4458n10346w.com">
         <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
         <div class="row">
@@ -348,7 +349,7 @@
           <label for="f-message">Message</label>
           <textarea id="f-message" name="message" required></textarea>
         </div>
-        <button type="submit" class="submit" disabled>Send</button>
+        <button type="submit" class="submit">Send</button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
       <nav class="back-to-toc"><a href="#contents" data-nav="contents">Return to Contents</a></nav>
@@ -398,7 +399,33 @@
       show(currentFromHash(), { updateHash: false });
     })();
 
-    // Contact form: inactive until it has its own key
+    // Contact form via Web3Forms
+    (function () {
+      var form = document.getElementById('contact-form');
+      var note = document.getElementById('form-note');
+      var button = form.querySelector('button[type="submit"]');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        button.disabled = true;
+        note.className = 'form-note';
+        note.textContent = 'Sending...';
+        fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        }).then(function (r) { return r.json(); }).then(function (data) {
+          if (!data.success) throw new Error(data.message || 'Send failed');
+          form.reset();
+          note.className = 'form-note ok';
+          note.textContent = 'Thank you. Your message was sent.';
+        }).catch(function () {
+          note.className = 'form-note err';
+          note.textContent = 'Sorry, your message could not be sent. Please email bdemsey@gmail.com.';
+        }).then(function () {
+          button.disabled = false;
+        });
+      });
+    })();
   </script>
 
 </body>
