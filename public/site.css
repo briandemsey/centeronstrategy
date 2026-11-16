@@ -541,6 +541,32 @@ ol.route li::before {
   letter-spacing: 0.32em;
 }
 
+/* ===================== BACK ARROW ===================== */
+.page-back {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--ink);
+  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.page-back:hover, .page-back:focus-visible {
+  border-color: var(--accent-deep);
+  color: var(--accent-deep);
+  outline: none;
+}
+
 /* ===================== RESPONSIVE ===================== */
 @media (max-width: 640px) {
   body { font-size: 18px; }

@@ -22,6 +22,8 @@
 </head>
 <body class="view-contents">
 
+  <a class="page-back" id="page-back" href="index.html" aria-label="Go back" title="Back">&#8592;</a>
+
   <!-- ===================== VIEW: TABLE OF CONTENTS ===================== -->
   <section class="view toc-view" data-view="contents">
     <div class="toc-wrap">
@@ -423,6 +425,14 @@
       });
 
       show(currentFromHash(), { updateHash: false });
+
+      // Back arrow: from a section go to Contents; from Contents go to the landing page
+      document.getElementById('page-back').addEventListener('click', function (ev) {
+        if (currentFromHash() !== 'contents') {
+          ev.preventDefault();
+          show('contents', { updateHash: true });
+        }
+      });
     })();
 
     // Contact form via Web3Forms

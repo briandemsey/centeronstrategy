@@ -50,13 +50,21 @@
       .hero { width: 94vw; }
       .logo { width: 50%; left: 3.5%; }
     }
+    .page-back { position: fixed; top: 1rem; left: 1rem; z-index: 100; width: 2.5rem; height: 2.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; line-height: 1; color: var(--navy); text-decoration: none; background: rgba(255,255,255,0.92); border: 1px solid #d5dbe3; border-radius: 50%; transition: border-color 0.2s ease, color 0.2s ease; }
+    .page-back:hover, .page-back:focus-visible { border-color: var(--red); color: var(--red); outline: none; }
   </style>
 </head>
 <body>
+  <a class="page-back" id="page-back" href="/" aria-label="Go back" title="Back">&#8592;</a>
   <div class="hero">
     <img class="scene" src="black-hills.jpg" width="1672" height="941" alt="Pine forest and limestone cliffs of the Black Hills at dawn">
     <img class="logo" src="logo-overlay.png" width="1545" height="587" alt="CoS LLC, Center on Strategy">
   </div>
   <a class="enter" href="contents.html">Enter</a>
+<script>
+document.getElementById('page-back').addEventListener('click', function (e) {
+  if (history.length > 1) { e.preventDefault(); history.back(); }
+});
+</script>
 </body>
 </html>
