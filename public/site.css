@@ -614,3 +614,5 @@ ol.route li::before {
 .report-points li { margin-bottom: 0.6rem; }
 .report-request { display: inline-block; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase; padding: 0.3rem 0; }
 .photo-only { margin-top: 0; }
+
+.director-title{margin:-.4rem 0 .6rem;color:#7C8189;font-size:.95em}
